@@ -1,0 +1,32 @@
+CREATE TABLE clientes
+( cliente_id number(3) NOT NULL,
+  nombre varchar2(30) NOT NULL,
+  apellido varchar2(20) NOT NULL,
+  dni number(10) NOT NULL,
+  sueldo_neto(6) NOT NULL,
+  direccion varchar2(50),
+  fecha_nac date NOT NULL,
+  provincia varchar2(30),
+  CONSTRAINT clientes_pk PRIMARY KEY (cliente_id)
+);
+
+INSERT ALL 
+INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (3, 'Juan', 'Romero', 30987654, 76000, 'Río Negro 766', '23/12/1982', 'Jujuy')
+INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (4, 'Juliana', 'Díaz', 34876988, 65438, 'Salta 456', '13/10/2000', 'Corrientes')
+INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (5, 'Marcela', 'Jiménez', 36546876, 54366, 'Córdoba 874', '18/08/2002', 'Bs As')
+INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (6, 'Nicolás', 'Garay', 34098766, 24388, 'Jujuy 244', '18/06/1998', 'Córdoba')
+INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (7, 'Gabriel', 'Solano', 28765988, 64532, 'Centenario 3548', '14/10/1996', 'Bs As')
+INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (8, 'Jorge', 'Domenech', 96876544, 88654, 'Rosario 4360', '03/01/1998', 'Corrientes')
+INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (9, 'Diego', 'Claros', 34765646, 64565, 'Las Piedras 8764', '02/10/1986', 'Córdoba')
+INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (10, 'Marcela', 'Gómez', 32547988, 45652, 'Magnolias 3452', '28/10/1988', 'Córdoba')
+INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (11, 'Rodrigo', 'Centurión', 98654542, 48766, 'Río Primero 342', '04/04/1990', 'Jujuy')
+INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (12, 'Fernando', 'Granado', 34565432, 24786, 'Los Paraísos 68', '08/10/1992', 'Chaco')
+INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (13, 'Diego', 'Bolsón', 26765434, 34980, 'Trelew 244', '03/02/1998', 'Bs As')
+INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (14, 'Carolina', 'Dimarco', 28987658, 36876, 'Trafalgar 488', '13/10/2000', 'Córdoba')
+INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (15, 'Diana', 'Paéz', 34876842, 26786, 'Palestina 808', '22/10/2002', 'Córdoba')
+INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (16, 'Paola', 'Cuellar', 34987652, 28654, 'Güemes 646', '26/05/1994', 'Bs As')
+INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (17, 'Yanina', 'Monetti', 26458098, 38976, 'Medrano 988', '13/10/1976', 'Bs As')
+INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (18, 'Carlos', 'Toledo', 36987956, 58764, 'Sarmiento 6544', '18/04/1996', 'Jujuy')
+INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (19, 'Eduardo', 'Rey', 38656098, 48766, 'Chubut 988', '24/08/1998', 'Misiones')
+INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (20, 'Jimena', 'Calvo', 38765632, 28968, 'Tapalqué 4244', '16/10/1978', 'Córdoba')
+SELECT 1 FROM dual
