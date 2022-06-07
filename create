@@ -29,4 +29,11 @@ INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_na
 INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (18, 'Carlos', 'Toledo', 36987956, 58764, 'Sarmiento 6544', '18/04/1996', 'Jujuy')
 INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (19, 'Eduardo', 'Rey', 38656098, 48766, 'Chubut 988', '24/08/1998', 'Misiones')
 INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (20, 'Jimena', 'Calvo', 38765632, 28968, 'Tapalqué 4244', '16/10/1978', 'Córdoba')
-SELECT 1 FROM dual
+SELECT 1 FROM dual 
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_ue_cursos")
+    @SequenceGenerator(name = "id_ue_cursos", sequenceName ="ue21.ue_cursos_seq", allocationSize = 1)
+    private Long id;
+
+
