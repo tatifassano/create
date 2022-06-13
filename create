@@ -36,4 +36,121 @@ SELECT 1 FROM dual
     @SequenceGenerator(name = "id_ue_cursos", sequenceName ="ue21.ue_cursos_seq", allocationSize = 1)
     private Long id;
 
+CREATE TABLE customers
+( customer_id number(10) NOT NULL,
+  customer_name varchar2(50) NOT NULL,
+  address varchar2(50),
+  city varchar2(50),
+  state varchar2(25),
+  zip_code varchar2(10),
+  CONSTRAINT customers_pk PRIMARY KEY (customer_id)
+);
+
+
+CREATE TABLE departments
+( department_id number(10) NOT NULL,
+  department_name varchar2(50) NOT NULL,
+  CONSTRAINT departments_pk PRIMARY KEY (department_id)
+);
+
+CREATE TABLE customers
+( customer_id number(10) NOT NULL,
+  customer_name varchar2(50) NOT NULL,
+  address varchar2(50),
+  city varchar2(50),
+  state varchar2(25),
+  zip_code varchar2(10),
+  CONSTRAINT customers_pk PRIMARY KEY (customer_id)
+);
+
+CREATE TABLE employees
+( employee_number number(10) NOT NULL,
+  employee_name varchar2(50) NOT NULL,
+  department_id number(10),
+  salary number(6),
+  CONSTRAINT employees_pk PRIMARY KEY (employee_number),
+  CONSTRAINT fk_departments
+    FOREIGN KEY (department_id)
+    REFERENCES departments(department_id)
+);
+
+CREATE TABLE clientes
+( cliente_id number(3) NOT NULL,
+  nombre varchar2(30) NOT NULL,
+  apellido varchar2(20) NOT NULL,
+  dni number(10) NOT NULL,
+  sueldo_neto(6) NOT NULL,
+  direccion varchar2(50),
+  fecha_nac date NOT NULL,
+  provincia varchar2(30),
+  CONSTRAINT clientes_pk PRIMARY KEY (cliente_id)
+);
+
+CREATE TABLE celulares
+( numero_id number(3) NOT NULL,
+  cod_area number(4) NOT NULL,
+  numero number(10) NOT NULL,
+  marca varchar2(50),
+  fecha_compra date NOT NULL,
+  cliente_id number(3),
+  CONSTRAINT celulares_pk PRIMARY KEY (numero_id),
+  CONSTRAINT fk_celulares
+	FOREIGN KEY (cliente_id)
+	REFERENCES clientes(cliente_id)
+);
+
+
+
+INSERT ALL 
+INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (3, 'Juan', 'Romero', 30987654, 76000, 'Río Negro 766', '23/12/1982', 'Jujuy')
+INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (4, 'Juliana', 'Díaz', 34876988, 65438, 'Salta 456', '13/10/2000', 'Corrientes')
+INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (5, 'Marcela', 'Jiménez', 36546876, 54366, 'Córdoba 874', '18/08/2002', 'Bs As')
+INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (6, 'Nicolás', 'Garay', 34098766, 24388, 'Jujuy 244', '18/06/1998', 'Córdoba')
+INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (7, 'Gabriel', 'Solano', 28765988, 64532, 'Centenario 3548', '14/10/1996', 'Bs As')
+INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (8, 'Jorge', 'Domenech', 96876544, 88654, 'Rosario 4360', '03/01/1998', 'Corrientes')
+INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (9, 'Diego', 'Claros', 34765646, 64565, 'Las Piedras 8764', '02/10/1986', 'Córdoba')
+INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (10, 'Marcela', 'Gómez', 32547988, 45652, 'Magnolias 3452', '28/10/1988', 'Córdoba')
+INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (11, 'Rodrigo', 'Centurión', 98654542, 48766, 'Río Primero 342', '04/04/1990', 'Jujuy')
+INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (12, 'Fernando', 'Granado', 34565432, 24786, 'Los Paraísos 68', '08/10/1992', 'Chaco')
+INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (13, 'Diego', 'Bolsón', 26765434, 34980, 'Trelew 244', '03/02/1998', 'Bs As')
+INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (14, 'Carolina', 'Dimarco', 28987658, 36876, 'Trafalgar 488', '13/10/2000', 'Córdoba')
+INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (15, 'Diana', 'Paéz', 34876842, 26786, 'Palestina 808', '22/10/2002', 'Córdoba')
+INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (16, 'Paola', 'Cuellar', 34987652, 28654, 'Güemes 646', '26/05/1994', 'Bs As')
+INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (17, 'Yanina', 'Monetti', 26458098, 38976, 'Medrano 988', '13/10/1976', 'Bs As')
+INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (18, 'Carlos', 'Toledo', 36987956, 58764, 'Sarmiento 6544', '18/04/1996', 'Jujuy')
+INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (19, 'Eduardo', 'Rey', 38656098, 48766, 'Chubut 988', '24/08/1998', 'Misiones')
+INTO cliente (id_number, nombre, apellido, dni, sueldo_neto, direccion, fecha_nac, provincia) VALUES (20, 'Jimena', 'Calvo', 38765632, 28968, 'Tapalqué 4244', '16/10/1978', 'Córdoba')
+SELECT 1 FROM dual;
+
+
+INSERT ALL 
+INTO celulares (id_celular, cod_area, numero, marca, fecha_compra, id_cliente) VALUES (1, 351, 3454424, 'Motorola', '04/04/2016', 8)
+INTO celulares (id_celular, cod_area, numero, marca, fecha_compra, id_cliente) VALUES (2, 351, 4356786, 'Samsung', '04/07/2015', 4)
+INTO celulares (id_celular, cod_area, numero, marca, fecha_compra, id_cliente) VALUES (3, 11, 34658254, 'One', '02/10/2010', 2)
+INTO celulares (id_celular, cod_area, numero, marca, fecha_compra, id_cliente) VALUES (4, 388, 4567842, 'Motorola', '06/07/2012', 6)
+INTO celulares (id_celular, cod_area, numero, marca, fecha_compra, id_cliente) VALUES (5, 351, 4567324, 'Samsung', '04/04/2016', 3)
+INTO celulares (id_celular, cod_area, numero, marca, fecha_compra, id_cliente) VALUES (6, 11, 48697454, 'Motorola', '24/10/2014', 9)
+INTO celulares (id_celular, cod_area, numero, marca, fecha_compra, id_cliente) VALUES (7, 388, 3456276, 'Motorola', '14/05/2021', 10)
+INTO celulares (id_celular, cod_area, numero, marca, fecha_compra, id_cliente) VALUES (8, 381, 5473788, 'HiTech', '24/04/2020', 14)
+INTO celulares (id_celular, cod_area, numero, marca, fecha_compra, id_cliente) VALUES (9, 11, 45635228, 'One', '25/11/2019', 2)
+INTO celulares (id_celular, cod_area, numero, marca, fecha_compra, id_cliente) VALUES (10, 381, 4567344, 'Motorola', '02/04/2018', 16)
+INTO celulares (id_celular, cod_area, numero, marca, fecha_compra, id_cliente) VALUES (11, 351, 4638764, 'Samsung', '16/03/2015', 4)
+INTO celulares (id_celular, cod_area, numero, marca, fecha_compra, id_cliente) VALUES (12, 11, 35678242, 'One', '24/12/2020', 13)
+INTO celulares (id_celular, cod_area, numero, marca, fecha_compra, id_cliente) VALUES (13, 381, 4567324, 'HiTech', '22/08/2019', 15)
+INTO celulares (id_celular, cod_area, numero, marca, fecha_compra, id_cliente) VALUES (14, 388, 4365478, 'Motorola', '04/10/2016', 5)
+INTO celulares (id_celular, cod_area, numero, marca, fecha_compra, id_cliente) VALUES (15, 351, 4562346, 'Motorola', '22/03/2014', 9)
+INTO celulares (id_celular, cod_area, numero, marca, fecha_compra, id_cliente) VALUES (16, 351, 5467842, 'Samsung', '12/10/2018', 10)
+SELECT 1 FROM dual;
+
+
+
+INSERT ALL 
+    INTO Products ( ProductId, ProductName, Price ) VALUES ( 1, 'Left Handed Screwdriver', 10.50 )
+    INTO Products ( ProductId, ProductName, Price ) VALUES ( 2, 'Right Handed Screwdriver', 22.75 )
+    INTO Products ( ProductId, ProductName, Price ) VALUES ( 3, 'Bottomless Coffee Cup (4 pack)', 15.00 )
+    INTO Products ( ProductId, ProductName, Price ) VALUES ( 4, 'Urban Dictionary Version 2.3', 75 )
+    INTO Products ( ProductId, ProductName, Price ) VALUES ( 5, 'Beer Water', 15 )
+SELECT 1 FROM dual;
+
+
 
