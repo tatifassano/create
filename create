@@ -160,3 +160,8 @@ CREATE TABLE prueba
 );
 
 
+ALTER TABLE products
+ADD CONSTRAINT fk_supplier
+  FOREIGN KEY (supplier_id)
+  REFERENCES supplier(supplier_id);
+
