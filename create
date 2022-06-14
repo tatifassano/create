@@ -164,4 +164,11 @@ ALTER TABLE products
 ADD CONSTRAINT fk_supplier
   FOREIGN KEY (supplier_id)
   REFERENCES supplier(supplier_id);
+  
+  CREATE SEQUENCE sequence_name
+  MINVALUE value
+  MAXVALUE value
+  START WITH value
+  INCREMENT BY value
+  CACHE value;
 
