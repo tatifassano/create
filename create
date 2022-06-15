@@ -181,3 +181,6 @@ ALTER TABLE table_name
   
   ALTER TABLE table_name
   MODIFY column_name column_type;
+  
+  ALTER TABLE table_name
+  RENAME COLUMN old_name TO new_name;
