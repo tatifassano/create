@@ -172,3 +172,9 @@ ADD CONSTRAINT fk_supplier
   INCREMENT BY value
   CACHE value;
 
+
+ALTER TABLE products
+DROP CONSTRAINT fk_supplier;
+
+ALTER TABLE table_name
+  DROP COLUMN column_name;
